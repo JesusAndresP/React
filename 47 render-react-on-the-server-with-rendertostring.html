@@ -1,11 +1,35 @@
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return <div/>
-  }
-};
+<!DOCTYPE html>
+<html lang="en">
 
-// Change code below this line
-ReactDOMServer.renderToString(<App />);
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    class Practica extends React.Component {
+      constructor(props) {
+        super(props);
+      }
+      render() {
+        return <div />
+      }
+
+    }
+
+    ReactDOM.render(<Practica />, document.getElementById('root'))
+  </script>
+
+
+</body>
+
+</html>

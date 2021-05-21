@@ -1,46 +1,76 @@
-const textAreaStyles = {
-  width: 235,
-  margin: 5
-};
-
 class MyToDoList extends React.Component {
-  constructor(props) {
-    super(props);
-    // Change code below this line
-    this.state = {
-      userInput: '',
-      toDoList: []
-    }
-    // Change code above this line
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleSubmit() {
-    const itemsArray = this.state.userInput.split(',');
-    this.setState({
-      toDoList: itemsArray
-    });
-  }
-  handleChange(e) {
-    this.setState({
-      userInput: e.target.value
-    });
-  }
-  render() {
-    const items = this.state.toDoList.map(i => <li>{i}</li>);; // Change this line
-    return (
-      <div>
-        <textarea
-          onChange={this.handleChange}
-          value={this.state.userInput}
-          style={textAreaStyles}
-          placeholder='Separate Items With Commas'
-        />
-        <br />
-        <button onClick={this.handleSubmit}>Create List</button>
-        <h1>My "To Do" List:</h1>
-        <ul>{items}</ul>
-      </div>
-    );
-  }
 }
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const textAreaStyles = {
+      width: 235,
+      margin: 5
+    };
+
+    class Practica extends React.Component {
+      constructor(props) {
+        super(props);
+        // Change code below this line
+        this.state = {
+          userInput: '',
+          toDoList: []
+        }
+        // Change code above this line
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+      }
+      handleSubmit() {
+        const itemsArray = this.state.userInput.split(',');
+        this.setState({
+          toDoList: itemsArray
+        });
+      }
+      handleChange(e) {
+        this.setState({
+          userInput: e.target.value
+        });
+      }
+      render() {
+        const items = this.state.toDoList.map(i => <li>{i}</li>);; // Change this line
+        return (
+          <div>
+            <textarea
+              onChange={this.handleChange}
+              value={this.state.userInput}
+              style={textAreaStyles}
+              placeholder='Separate Items With Commas'
+            />
+            <br />
+            <button onClick={this.handleSubmit}>Create List</button>
+            <h1>My "To Do" List:</h1>
+            <ul>{items}</ul>
+          </div>
+        );
+      }
+
+    }
+
+    ReactDOM.render(<Practica />, document.getElementById('root'))
+  </script>
+
+
+</body>
+
+</html>

@@ -1,34 +1,62 @@
-class GateKeeper extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      input: ''
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(event) {
-    this.setState({ input: event.target.value })
-  }
-  render() {
-    let inputStyle = {
-      border: '1px solid black'
-    };
-    // Change code below this line
-    if (this.state.input.length > 15) {
-      inputStyle = {
-        border: '3px solid red'
-      };
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    class Practica extends React.Component {
+
+      constructor(props) {
+        super(props);
+        this.state = {
+          input: ''
+        };
+        this.handleChange = this.handleChange.bind(this);
+      }
+      handleChange(event) {
+        this.setState({ input: event.target.value })
+      }
+      render() {
+        let inputStyle = {
+          border: '1px solid black'
+        };
+        // Change code below this line
+        if (this.state.input.length > 15) {
+          inputStyle = {
+            border: '3px solid red'
+          };
+        }
+        // Change code above this line
+        return (
+          <div>
+            <h3>Don't Type Too Much:</h3>
+            <input
+              type="text"
+              style={inputStyle}
+              value={this.state.input}
+              onChange={this.handleChange} />
+          </div>
+        );
+      }
+
     }
-    // Change code above this line
-    return (
-      <div>
-        <h3>Don't Type Too Much:</h3>
-        <input
-          type="text"
-          style={inputStyle}
-          value={this.state.input}
-          onChange={this.handleChange} />
-      </div>
-    );
-  }
-};
+
+    ReactDOM.render(<Practica />, document.getElementById('root'))
+  </script>
+
+
+</body>
+
+</html>

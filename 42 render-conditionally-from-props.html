@@ -1,39 +1,67 @@
-class Results extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    {/* Change code below this line */}
-    return       <h1>
-      {this.props.fiftyFifty ? "You Win!" : "You Lose!"}
-      </h1>
-    {/* Change code above this line */}
-  }
-}
-
 class GameOfChance extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      counter: 1
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick() {
-    this.setState({
-      counter: this.state.counter + 1 // Change this line
-    });
-  }
-  render() {
-    const expression = Math.random() >= 0.5 ? true : false; // Change this line
-    return (
-      <div>
-        <button onClick={this.handleClick}>Play Again</button>
-        {/* Change code below this line */}
- <Results fiftyFifty={expression} />
-        {/* Change code above this line */}
-        <p>{'Turn: ' + this.state.counter}</p>
-      </div>
-    );
-  }
 }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    class Results extends React.Component {
+      constructor(props) {
+        super(props);
+      }
+      render() {
+        {/* Change code below this line */ }
+        return <h1>
+          {this.props.fiftyFifty ? "You Win!" : "You Lose!"}
+        </h1>
+        {/* Change code above this line */ }
+      }
+    }
+    class Practica extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          counter: 1
+        };
+        this.handleClick = this.handleClick.bind(this);
+      }
+      handleClick() {
+        this.setState({
+          counter: this.state.counter + 1 // Change this line
+        });
+      }
+      render() {
+        const expression = Math.random() >= 0.5 ? true : false; // Change this line
+        return (
+          <div>
+            <button onClick={this.handleClick}>Play Again</button>
+            {/* Change code below this line */}
+            <Results fiftyFifty={expression} />
+            {/* Change code above this line */}
+            <p>{'Turn: ' + this.state.counter}</p>
+          </div>
+        );
+      }
+
+    }
+
+    ReactDOM.render(<Practica />, document.getElementById('root'))
+  </script>
+
+
+</body>
+
+</html>
