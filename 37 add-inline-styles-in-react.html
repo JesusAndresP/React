@@ -1,16 +1,41 @@
-// Change code above this line
-const styles = {
-  color: 'purple',
-  fontSize: 40,
-  border: "2px solid purple",
-};
+<!DOCTYPE html>
+<html lang="en">
 
-class Colorful extends React.Component {
-  render() {
-    // Change code below this line
-    return (
-      <div style={styles}>Style Me!</div>
-    );
-    // Change code above this line
-  }
-};
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const styles = {
+      color: 'purple',
+      fontSize: 40,
+      border: "2px solid purple",
+    };
+
+    class Practica extends React.Component {
+      render() {
+        // Change code below this line
+        return (
+          <div style={styles}>Style Me!</div>
+        );
+        // Change code above this line
+      }
+    }
+
+    ReactDOM.render(<Practica />, document.getElementById('root'))
+  </script>
+
+
+</body>
+
+</html>
