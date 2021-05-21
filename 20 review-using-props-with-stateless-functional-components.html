@@ -1,22 +1,46 @@
-class CampSite extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div>
-        <Camper/>
-      </div>
-    );
-  }
-};
-// Change code below this line
-const Camper = props => <p>{props.name}</p>;
+<!DOCTYPE html>
+<html lang="en">
 
-Camper.defaultProps = {
-  name: "CamperBot"
-};
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 
-Camper.propTypes = {
-  name: PropTypes.string.isRequired
-};
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    class Practica extends React.Component {
+      constructor(props) {
+        super(props);
+      }
+      render() {
+        return <div>
+          <Camper />
+        </div>
+      }
+    }
+    const Camper = props => <p>{props.name}</p>;
+
+    Camper.defaultProps = {
+      name: "CamperBot"
+    };
+
+    Camper.propTypes = {
+      name: PropTypes.string.isRequired
+    };
+
+
+    ReactDOM.render(<Practica />, document.getElementById('root'))
+  </script>
+
+
+</body>
+
+</html>

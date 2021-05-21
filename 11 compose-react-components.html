@@ -1,4 +1,20 @@
-class Fruits extends React.Component {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+  class Fruits extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -14,14 +30,12 @@ class Fruits extends React.Component {
     );
   }
 };
-
-class TypesOfFood extends React.Component {
-  constructor(props) {
+    class Practica extends React.Component {
+      constructor(props) {
      super(props);
   }
-  render() {
-    return (
-      <div>
+      render() {
+        return <div>
         <h1>Types of Food:</h1>
         { /* Change code below this line */ }
         <Fruits />
@@ -29,6 +43,12 @@ class TypesOfFood extends React.Component {
         { /* Change code above this line */ }
         <Vegetables />
       </div>
-    );
-  }
-};
+      }
+    }
+
+    ReactDOM.render(<Practica />, document.getElementById('root'))
+  </script>
+
+  
+</body>
+</html>

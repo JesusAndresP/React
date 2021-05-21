@@ -1,36 +1,60 @@
-class ReturnTempPassword extends React.Component {
-  constructor(props) {
-    super(props);
+<!DOCTYPE html>
+<html lang="en">
 
-  }
-  render() {
-    return (
-        <div>
-            { /* Change code below this line */ }
-<p>Your temporary password is: <strong>{this.props.tempPassword}</strong></p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 
-            { /* Change code above this line */ }
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    class Practica extends React.Component {
+      constructor(props) {
+        super(props);
+
+      }
+      render() {
+        return <div>
+          { /* Change code below this line */}
+          <p>Your temporary password is: <strong>{this.props.tempPassword}</strong></p>
+
+          { /* Change code above this line */}
         </div>
-    );
-  }
-};
+      }
+    }
+    class ResetPassword extends React.Component {
+      constructor(props) {
+        super(props);
 
-class ResetPassword extends React.Component {
-  constructor(props) {
-    super(props);
+      }
+      render() {
+        return (
+          <div>
+            <h2>Reset Password</h2>
+            <h3>We've generated a new temporary password for you.</h3>
+            <h3>Please reset this password from your account settings ASAP.</h3>
+            { /* Change code below this line */}
+            <Practica tempPassword="xxxxxxxx" />
 
-  }
-  render() {
-    return (
-        <div>
-          <h2>Reset Password</h2>
-          <h3>We've generated a new temporary password for you.</h3>
-          <h3>Please reset this password from your account settings ASAP.</h3>
-          { /* Change code below this line */ }
-<ReturnTempPassword tempPassword="xxxxxxxx" />
+            { /* Change code above this line */}
+          </div>
+        );
+      }
+    };
 
-          { /* Change code above this line */ }
-        </div>
-    );
-  }
-};
+
+    ReactDOM.render(<Practica />, document.getElementById('root'))
+  </script>
+
+
+</body>
+
+</html>
